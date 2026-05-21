@@ -1,0 +1,141 @@
+{
+  "0": {
+    "marketId": 0,
+    "question": "Will Bitcoin close above $100,000 on 2026-06-01?",
+    "category": "crypto",
+    "createdAt": "2026-05-21T15:30:00Z",
+    "estimate": {
+      "probability": null,
+      "reasoning": "Day 1 manual test market — odds were hand-coded by the operator to exercise the contract flow before the AI agent was wired up. Agent-generated reasoning is not available for this market.",
+      "confidence": null,
+      "keyFactors": [],
+      "model": "manual"
+    }
+  },
+  "1": {
+    "marketId": 1,
+    "question": "Will Ethereum close above $5,000 on 2026-06-15?",
+    "category": "crypto",
+    "createdAt": "2026-05-21T18:00:00Z",
+    "estimate": {
+      "probability": 0.72,
+      "reasoning": "Ethereum is already in the $4.6K-$4.9K range and needs only ~2-8% appreciation to reach $5K over an 18-month timeframe. Historical volatility and bull market cycles suggest this is likely achievable. However, crypto remains highly cyclical and regulatory risks persist.",
+      "confidence": "medium",
+      "keyFactors": [
+        "Currently $4.6K-$4.9K, only 2-8% needed for $5K target",
+        "18-month timeframe allows for typical market cycles and growth",
+        "L2 adoption and fee revenue strength suggest ecosystem health",
+        "Crypto cyclicality and macro uncertainty create downside risk"
+      ],
+      "model": "claude-haiku-4-5-20251001"
+    }
+  },
+  "2": {
+    "marketId": 2,
+    "question": "Will the FOMC hold rates at the June 2026 meeting?",
+    "category": "macro",
+    "createdAt": "2026-05-21T18:00:30Z",
+    "estimate": {
+      "probability": 0.72,
+      "reasoning": "Fed futures markets are already pricing in a high probability of a hold, suggesting consensus among informed traders. The mixed labor market and cooling CPI provide a reasonable foundation for maintaining the current stance rather than moving. However, significant economic data between now and June 2026 could shift expectations materially in either direction.",
+      "confidence": "medium",
+      "keyFactors": [
+        "Fed futures showing high hold probability—market consensus embedded",
+        "CPI cooling reduces immediate rate-cut pressure",
+        "Mixed labor market suggests uncertainty about economic momentum",
+        "18-month time horizon allows substantial data revisions and policy shifts"
+      ],
+      "model": "claude-haiku-4-5-20251001"
+    }
+  },
+  "3": {
+    "marketId": 3,
+    "question": "Will Solana close above $300 on 2026-06-10?",
+    "category": "crypto",
+    "createdAt": "2026-05-21T18:49:29.396Z",
+    "estimate": {
+      "probability": 0.28,
+      "reasoning": "SOL is currently ~$260 with 19 days to resolve, requiring a ~15% rally to $300. While Solana shows strong network fundamentals and activity metrics, a move of this magnitude in such a short timeframe is challenging. ETF rumors provide upside optionality, but crypto volatility cuts both ways, and the price needs sustained momentum through a relatively short window.",
+      "confidence": "medium",
+      "keyFactors": [
+        "Current price $260 requires 15% gain in 19 days",
+        "Strong on-chain metrics and DEX activity supportive",
+        "ETF speculation provides catalyst but unconfirmed",
+        "Short timeframe limits reaction window for positive news"
+      ],
+      "model": "claude-haiku-4-5-20251001"
+    }
+  },
+  "4": {
+    "marketId": 4,
+    "question": "Will Bitcoin close above $110,000 on 2026-07-01?",
+    "category": "crypto",
+    "createdAt": "2026-05-21T18:49:38.533Z",
+    "estimate": {
+      "probability": 0.72,
+      "reasoning": "Bitcoin is currently in a strong structural position with $200B+ in spot ETF inflows and bullish halving narrative dynamics. A move from current levels (~$110K or slightly below) to above $110K by early July requires modest appreciation over 40 days. However, crypto volatility and potential macro headwinds create meaningful downside risk.",
+      "confidence": "medium",
+      "keyFactors": [
+        "Strong ETF inflow momentum and realized cap dynamics support bullish case",
+        "40-day timeframe provides reasonable window for continued rally to/above target",
+        "Crypto volatility and macro risks (Fed policy, geopolitical) create significant uncertainty",
+        "Halving narrative support may already be priced in; mean reversion risk exists"
+      ],
+      "model": "claude-haiku-4-5-20251001"
+    }
+  },
+  "5": {
+    "marketId": 5,
+    "question": "Will the ETH/BTC ratio close above 0.05 on 2026-06-30?",
+    "category": "crypto",
+    "createdAt": "2026-05-21T18:49:47.820Z",
+    "estimate": {
+      "probability": 0.28,
+      "reasoning": "ETH/BTC is currently near 0.045 and would need to appreciate ~11% relative to BTC in 39 days to close above 0.05. The narrative describes institutional flows favoring BTC and dominance pushing higher, which creates headwinds for ratio recovery. However, 39 days is sufficient time for mean reversion or sentiment shifts in crypto markets.",
+      "confidence": "medium",
+      "keyFactors": [
+        "Current ratio 0.045 requires ~11% appreciation to reach 0.05 target",
+        "Stated institutional BTC preference and rising dominance suggest near-term ratio pressure",
+        "39-day timeframe allows for sentiment/liquidity reversals in volatile crypto markets",
+        "No fundamental catalysts mentioned for ETH relative outperformance"
+      ],
+      "model": "claude-haiku-4-5-20251001"
+    }
+  },
+  "6": {
+    "marketId": 6,
+    "question": "Will Bitcoin dominance be below 50% on 2026-06-30?",
+    "category": "crypto",
+    "createdAt": "2026-05-21T18:49:57.849Z",
+    "estimate": {
+      "probability": 0.42,
+      "reasoning": "Bitcoin dominance is currently at 53%, requiring a 3+ percentage point decline in 39 days to resolve YES. While altcoin seasons do historically occur when BTC.D dips below 50%, the timeframe is relatively short and BTC.D has shown resistance at these levels. Recent market momentum and macro conditions would need to shift meaningfully toward altcoins in the next 5-6 weeks.",
+      "confidence": "medium",
+      "keyFactors": [
+        "Current BTC.D at 53% requires meaningful reallocation to alts",
+        "39-day timeframe is short for structural dominance shift",
+        "Altcoin season cycles vary in duration and aren't guaranteed",
+        "Macro crypto sentiment and Bitcoin price action will be decisive"
+      ],
+      "model": "claude-haiku-4-5-20251001"
+    }
+  },
+  "7": {
+    "marketId": 7,
+    "question": "Will US CPI YoY print below 3.0% for May 2026?",
+    "category": "macro",
+    "createdAt": "2026-05-21T18:50:07.147Z",
+    "estimate": {
+      "probability": 0.72,
+      "reasoning": "The last YoY CPI was 2.9%, already below the 3.0% threshold. With energy prices easing (a significant deflationary factor) and shelter inflation trending lower despite remaining sticky, the momentum favors a sub-3.0% print. The 21-day window provides clarity since the data is finalized before release. However, shelter remains unpredictable and any upside surprise in other components creates residual downside risk.",
+      "confidence": "high",
+      "keyFactors": [
+        "Previous print 2.9% already below threshold with low bar to clear",
+        "Energy prices easing provides tailwind for YoY comparison",
+        "Shelter inflation trending lower though still elevated",
+        "Short timeframe (21 days) means data already fixed before release"
+      ],
+      "model": "claude-haiku-4-5-20251001"
+    }
+  }
+}

@@ -8,6 +8,7 @@
 // orchestrator doesn't change.
 
 const WATCHLIST = [
+  // ── Crypto ─────────────────────────────────────────────────────────
   {
     id: "btc-100k-2026-06-01",
     category: "crypto",
@@ -27,6 +28,43 @@ const WATCHLIST = [
     resolutionDate: "2026-06-15",
   },
   {
+    id: "sol-300-2026-06-10",
+    category: "crypto",
+    headline: "Solana network activity at all-time highs",
+    description:
+      "SOL trading near $260. DEX volume up, validator count growing. ETF rumors continue.",
+    question: "Will Solana close above $300 on 2026-06-10?",
+    resolutionDate: "2026-06-10",
+  },
+  {
+    id: "btc-110k-2026-07-01",
+    category: "crypto",
+    headline: "Bitcoin eyeing $110K in early summer",
+    description:
+      "Spot ETF cumulative inflows passed $200B last week. Realized cap making new highs. Halving narrative tailwinds intact.",
+    question: "Will Bitcoin close above $110,000 on 2026-07-01?",
+    resolutionDate: "2026-07-01",
+  },
+  {
+    id: "eth-btc-ratio-2026-06-30",
+    category: "crypto",
+    headline: "ETH/BTC ratio drifting lower",
+    description:
+      "ETH/BTC sits near 0.045. Bitcoin dominance pushing higher as institutional flows favor BTC.",
+    question: "Will the ETH/BTC ratio close above 0.05 on 2026-06-30?",
+    resolutionDate: "2026-06-30",
+  },
+  {
+    id: "btc-dominance-2026-06-30",
+    category: "crypto",
+    headline: "BTC dominance debate intensifies",
+    description:
+      "BTC.D currently 53%. Altcoin season historically begins when BTC.D rolls over below 50%.",
+    question: "Will Bitcoin dominance be below 50% on 2026-06-30?",
+    resolutionDate: "2026-06-30",
+  },
+  // ── Macro ──────────────────────────────────────────────────────────
+  {
     id: "fed-jun-2026-hold",
     category: "macro",
     headline: "FOMC June 2026 meeting: rate decision pending",
@@ -35,6 +73,34 @@ const WATCHLIST = [
     question: "Will the FOMC hold rates at the June 2026 meeting?",
     resolutionDate: "2026-06-18",
   },
+  {
+    id: "cpi-may-2026",
+    category: "macro",
+    headline: "May CPI report due June 12",
+    description:
+      "Last YoY print was 2.9%. Energy prices easing. Shelter inflation sticky but trending lower.",
+    question: "Will US CPI YoY print below 3.0% for May 2026?",
+    resolutionDate: "2026-06-12",
+  },
+  {
+    id: "unemployment-may-2026",
+    category: "macro",
+    headline: "May jobs report due June 6",
+    description:
+      "Unemployment has held in the 4.1-4.3% range for three months. Hiring slowing but no clear breakdown.",
+    question: "Will US unemployment rate be below 4.5% for May 2026?",
+    resolutionDate: "2026-06-06",
+  },
+  {
+    id: "gold-3000-2026-06-30",
+    category: "macro",
+    headline: "Gold pushing all-time highs",
+    description:
+      "Spot gold near $2,900/oz. Central bank buying continues, real yields drifting lower.",
+    question: "Will gold close above $3,000/oz on 2026-06-30?",
+    resolutionDate: "2026-06-30",
+  },
+  // ── On-chain ───────────────────────────────────────────────────────
   {
     id: "uniswap-tvl-10b-2026-06-30",
     category: "onchain",
@@ -45,13 +111,31 @@ const WATCHLIST = [
     resolutionDate: "2026-06-30",
   },
   {
-    id: "sol-300-2026-06-10",
-    category: "crypto",
-    headline: "Solana network activity at all-time highs",
+    id: "base-tvl-30b-2026-06-30",
+    category: "onchain",
+    headline: "Base TVL surging on Coinbase tailwind",
     description:
-      "SOL trading near $260. DEX volume up, validator count growing. ETF rumors continue.",
-    question: "Will Solana close above $300 on 2026-06-10?",
-    resolutionDate: "2026-06-10",
+      "Base TVL near $24B, up from $18B at start of year. Bridges + native issuance both contributing.",
+    question: "Will Base TVL exceed $30B on 2026-06-30?",
+    resolutionDate: "2026-06-30",
+  },
+  {
+    id: "usdc-supply-2026-06-30",
+    category: "onchain",
+    headline: "USDC circulating supply at record highs",
+    description:
+      "USDC supply ~$180B and growing as Arc, CCTP, and institutional adoption compound.",
+    question: "Will USDC total supply exceed $200B on 2026-06-30?",
+    resolutionDate: "2026-06-30",
+  },
+  {
+    id: "eth-gas-2026-06-15",
+    category: "onchain",
+    headline: "Ethereum gas falling on L2 migration",
+    description:
+      "L1 gas avg ~6 gwei this week. Activity continues moving to L2s; blob throughput at capacity.",
+    question: "Will Ethereum L1 avg gas be below 5 gwei for the week of 2026-06-15?",
+    resolutionDate: "2026-06-22",
   },
 ];
 

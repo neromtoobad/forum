@@ -28,12 +28,20 @@ Rules:
 - "low" confidence: little data or far-out timeframe. "high": clear base rates and proximity.
 - keyFactors: 2-4 short bullets, no full sentences.`;
 
-function buildUserPrompt(event) {
+function buildUserPrompt(event, { today = new Date() } = {}) {
   const parts = [];
+  const todayISO = today.toISOString().slice(0, 10);
+  parts.push(`Today's date: ${todayISO}`);
+  if (event.resolutionDate) {
+    const days = Math.round(
+      (new Date(event.resolutionDate + "T00:00:00Z").getTime() - today.getTime()) /
+        86_400_000
+    );
+    parts.push(`Resolution date: ${event.resolutionDate} (${days} days from today)`);
+  }
   if (event.headline) parts.push(`Headline: ${event.headline}`);
   if (event.description) parts.push(`Description: ${event.description}`);
   if (event.category) parts.push(`Category: ${event.category}`);
-  if (event.resolutionDate) parts.push(`Resolution date: ${event.resolutionDate}`);
   if (event.question) parts.push(`Market question: ${event.question}`);
   parts.push("\nReturn JSON only.");
   return parts.join("\n");

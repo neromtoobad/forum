@@ -16,6 +16,36 @@
 // by default).
 require("dotenv").config({ override: true });
 
+const fs = require("fs");
+const path = require("path");
+const REASONING_PATH = path.join(__dirname, "..", "deployments", "reasoning.json");
+
+function _loadReasoning() {
+  try {
+    return JSON.parse(fs.readFileSync(REASONING_PATH, "utf8"));
+  } catch {
+    return {};
+  }
+}
+
+function _saveReasoning(marketId, candidate, estimation) {
+  const data = _loadReasoning();
+  data[marketId.toString()] = {
+    marketId: Number(marketId),
+    question: candidate.question,
+    category: candidate.category,
+    createdAt: new Date().toISOString(),
+    estimate: {
+      probability: estimation.probability,
+      reasoning: estimation.reasoning,
+      confidence: estimation.confidence,
+      keyFactors: estimation.keyFactors,
+      model: estimation.model || "unknown",
+    },
+  };
+  fs.writeFileSync(REASONING_PATH, JSON.stringify(data, null, 2) + "\n");
+}
+
 const odds = require("./odds");
 const scanner = require("./scanner");
 const estimator = require("./estimator");
@@ -27,6 +57,7 @@ async function runOnce({
   estimator: est = estimator,
   oddsLib = odds,
   estimatorOpts = {},
+  persistReasoning = true,
 } = {}) {
   if (!executor) throw new Error("runOnce: missing executor");
 
@@ -48,6 +79,15 @@ async function runOnce({
     yesOdds: computedOdds.yesOdds,
     noOdds: computedOdds.noOdds,
   });
+
+  // Persist reasoning so the frontend can render it for this marketId.
+  if (persistReasoning) {
+    try {
+      _saveReasoning(result.marketId, candidate, estimation);
+    } catch (e) {
+      console.error(`(warn) could not save reasoning: ${e.message}`);
+    }
+  }
 
   return {
     skipped: false,

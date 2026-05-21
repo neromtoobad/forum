@@ -9,6 +9,12 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# vite / frontend build artifacts
+frontend/dist/
+frontend/src/**/*.js
+frontend/tsconfig.tsbuildinfo
+.vercel/
+
 # hardhat
 artifacts/
 cache/

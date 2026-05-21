@@ -39,7 +39,7 @@ function mockEstimator({ probability = 0.6 } = {}) {
 describe("agent/index orchestrator", function () {
   it("runOnce wires scanner → estimator → odds → executor", async function () {
     const exec = mockExecutor();
-    const r = await runOnce({ executor: exec, estimator: mockEstimator() });
+    const r = await runOnce({ executor: exec, estimator: mockEstimator(), persistReasoning: false });
 
     expect(r.skipped).to.equal(false);
     expect(exec.calls.getAllMarkets).to.equal(1);
@@ -57,7 +57,7 @@ describe("agent/index orchestrator", function () {
   it("runOnce skips when all candidates are already live markets", async function () {
     const allQuestions = scanner.WATCHLIST.map((c) => c.question);
     const exec = mockExecutor({ existingQuestions: allQuestions });
-    const r = await runOnce({ executor: exec, estimator: mockEstimator() });
+    const r = await runOnce({ executor: exec, estimator: mockEstimator(), persistReasoning: false });
 
     expect(r.skipped).to.equal(true);
     expect(r.reason).to.match(/no candidates/);
@@ -66,14 +66,14 @@ describe("agent/index orchestrator", function () {
 
   it("runOnce skips candidates whose question already exists", async function () {
     const exec = mockExecutor({ existingQuestions: [scanner.WATCHLIST[0].question] });
-    const r = await runOnce({ executor: exec, estimator: mockEstimator() });
+    const r = await runOnce({ executor: exec, estimator: mockEstimator(), persistReasoning: false });
     expect(r.skipped).to.equal(false);
     expect(r.candidate.id).to.not.equal(scanner.WATCHLIST[0].id);
   });
 
   it("runMany creates up to `target` markets", async function () {
     const exec = mockExecutor();
-    const results = await runMany({ executor: exec, target: 3, estimator: mockEstimator() });
+    const results = await runMany({ executor: exec, target: 3, estimator: mockEstimator(), persistReasoning: false });
     expect(results).to.have.lengthOf(3);
     expect(results.every((r) => !r.skipped)).to.equal(true);
     expect(exec.calls.createMarket).to.have.lengthOf(3);
@@ -83,7 +83,7 @@ describe("agent/index orchestrator", function () {
     const allQuestions = scanner.WATCHLIST.map((c) => c.question);
     // pre-fill all but the last
     const exec = mockExecutor({ existingQuestions: allQuestions.slice(0, -1) });
-    const results = await runMany({ executor: exec, target: 5, estimator: mockEstimator() });
+    const results = await runMany({ executor: exec, target: 5, estimator: mockEstimator(), persistReasoning: false });
     expect(results).to.have.lengthOf(2);
     expect(results[0].skipped).to.equal(false);
     expect(results[1].skipped).to.equal(true);

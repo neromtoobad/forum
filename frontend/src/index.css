@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    font-feature-settings: "ss01" on, "cv11" on;
+  }
+  /* Tabular figures for any number in mono */
+  .font-mono,
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@layer components {
+  .wordmark {
+    @apply font-serif uppercase tracking-forum text-ink;
+    font-feature-settings: "ss01" on;
+  }
+  .card {
+    @apply rounded-xl bg-bg-surface border border-line;
+  }
+  .hairline {
+    @apply border-t border-line;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-line bg-bg-subtle px-2.5 py-1 text-xs text-ink-muted;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-md border border-line bg-bg-subtle px-4 py-2 text-sm font-medium text-ink hover:bg-bg transition;
+  }
+  .btn-primary {
+    @apply bg-ink text-bg border-ink hover:bg-ink-muted;
+  }
+  .btn-yes {
+    @apply bg-yes/15 text-yes border-yes/30 hover:bg-yes/25;
+  }
+  .btn-no {
+    @apply bg-no/15 text-no border-no/30 hover:bg-no/25;
+  }
+}
+
+/* subtle scanline for header */
+.scanline {
+  background-image: linear-gradient(
+    180deg,
+    transparent 0%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.015) 50%,
+    rgba(255, 255, 255, 0.015) 100%
+  );
+  background-size: 100% 3px;
+}
