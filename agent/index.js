@@ -9,6 +9,7 @@
 //   node agent/index.js run                   # create 1 market
 //   node agent/index.js run 3                 # create up to 3 markets
 //   node agent/index.js resolve <id> <yes|no> # resolve a market
+//   node agent/index.js claim <id>            # claim winnings on a resolved market
 
 // Load .env with override so the file is the source of truth. Without
 // override, an empty-string ANTHROPIC_API_KEY in the user's shell would
@@ -162,6 +163,15 @@ if (require.main === module) {
       return;
     }
 
+    if (cmd === "claim") {
+      const marketId = parseInt(process.argv[3], 10);
+      if (!Number.isFinite(marketId)) throw new Error("claim: marketId required");
+      console.log(`→ Claiming winnings on market #${marketId}...`);
+      const r = await executor.claimWinnings(marketId);
+      console.log(`  tx: ${r.txHash}`);
+      return;
+    }
+
     if (cmd === "run" || cmd === "create-next") {
       const target = arg ? parseInt(arg, 10) : 1;
       if (!Number.isFinite(target) || target < 1) {
@@ -189,7 +199,9 @@ if (require.main === module) {
       return;
     }
 
-    console.error("Usage: node agent/index.js [status | markets | run [N] | resolve <id> <yes|no>]");
+    console.error(
+      "Usage: node agent/index.js [status | markets | run [N] | resolve <id> <yes|no> | claim <id>]"
+    );
     process.exit(1);
   })().catch((e) => {
     console.error(e);

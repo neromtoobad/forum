@@ -101,6 +101,12 @@ class ArcExecutor {
     return { txHash: tx.hash, receipt };
   }
 
+  async claimWinnings(marketId) {
+    const tx = await this.pm.claimWinnings(marketId);
+    const receipt = await tx.wait();
+    return { txHash: tx.hash, receipt };
+  }
+
   async getAllMarkets() {
     return await this.factory.getAllMarkets();
   }
