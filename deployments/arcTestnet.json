@@ -1,0 +1,17 @@
+{
+  "network": "arcTestnet",
+  "chainId": 5042002,
+  "deployedAt": "2026-05-21T15:42:06.015Z",
+  "deployer": "0xbe213A1d23A91CA2FBF2f5AE2DCf8a463d8f76Ad",
+  "agent": "0xbe213A1d23A91CA2FBF2f5AE2DCf8a463d8f76Ad",
+  "contracts": {
+    "MarketFactory": "0x510D2aa93030Fb6C31F530d4Db36f12293f05686",
+    "PredictionMarket": "0xf6E733FE9Eb4D0662348eadf6bCf42FcA42fE258",
+    "Treasury": "0xf42d7680666D9295f345f9082879C2C2DB82e308",
+    "USDC": "0x3600000000000000000000000000000000000000"
+  },
+  "txHashes": {
+    "MarketFactory": "0x2095b120c3404320660ed778eb9bf1b1a7f9cb6b713bf6e31ff59a527eb74dd7",
+    "Treasury": "0x36cef3b5a15094d4c8e9314159bf8a535b6107a56f7b31b570f661191238a706"
+  }
+}
