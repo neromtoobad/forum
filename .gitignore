@@ -30,3 +30,4 @@ deployments/*.local.json
 .vscode/
 .idea/
 *.swp
+.vercel
